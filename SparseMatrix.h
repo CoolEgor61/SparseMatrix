@@ -120,13 +120,13 @@ public:
     T* operator*(const T* x) // обычное умножение
     {
         // Ax=b
-        T* b = new T[n]{};
+        T* b = new T[n]{0};
         for(std::size_t i=0;i<nz;i++) b[row[i]]+=value[i]*x[col[i]];
         return b;
     }
     T* fstMul(const T* x) // упорядоченное умножение
     {
-        T* b = new T[n]();
+        T* b = new T[n]{0};
         std::size_t j=0;
         for(std::size_t i=0;i<n;i++)
             while(j<nz && row[j]==i){
